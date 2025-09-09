@@ -1,4 +1,72 @@
+<<<<<<< HEAD
 @charset "utf-8";
+=======
+/* Reset */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background: #fff;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgb(200, 188, 167);
+  gap: 40px;
+  padding-left: 420px;
+}
+
+header .logo {
+  height: 37px;
+  width: auto;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-left: 50px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+<<<<<<< HEAD
+
+.search-cart {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-left: 280px;
+=======
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 180px;
+}
+
+.icons img {
+  height: 30px;
+>>>>>>> fa47a27 (sept 5 update)
+}
+>>>>>>> f3a915adb2374bc1ab25d2c0f0661fdd9da2521f
 
 /* Hero Section */
 .hero {
@@ -19,6 +87,44 @@
 }
 
 .hero-text {
+<<<<<<< HEAD
+  display: inline-block;
+  position: relative;
+  top: 50px;
+  right: 150px;
+=======
+<<<<<<< HEAD
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  padding: 40px;
+>>>>>>> f3a915adb2374bc1ab25d2c0f0661fdd9da2521f
+}
+
+.hero h1 {
+  font-size: 3.7rem;
+  background-color: #D32F2F;
+  color: #FFFFFF;
+  display: inline-block;
+<<<<<<< HEAD
+  padding: 30px 15px;
+=======
+  text-align: justify;
+}
+
+.hero h2 {
+  font-size: 15px;
+  color: #f0f0f0;
+  margin-top: -20px;
+  margin-bottom: 0px auto;
+  background-color: red;
+  display: inline-block;
+  text-align: right;
+}
+
+=======
   display: inline-block;
   position: relative;
   top: 50px;
@@ -31,6 +137,41 @@
   color: #FFFFFF;
   display: inline-block;
   padding: 30px 15px;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 200;
+  ;
+}
+
+.hero-heading h2 {
+  position: absolute;
+  bottom: -10px;
+  right: 0;                  
+  background-color: #D32F2F;
+  font-size: 1rem;
+  color: #FFFFFF;
+  padding: 15px 10px;
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 200;
+}
+
+
+>>>>>>> fa47a27 (sept 5 update)
+/* Products Section */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  justify-items: center;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  padding: 15px;
+>>>>>>> f3a915adb2374bc1ab25d2c0f0661fdd9da2521f
   text-align: center;
   margin: 0 auto;
   font-family: 'Roboto Slab', serif;
