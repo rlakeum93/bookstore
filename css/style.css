@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 @charset "utf-8";
-=======
-/* Reset */
+
 /* Reset */
 * {
   margin: 0;
@@ -47,14 +45,7 @@ header .logo {
   color: #333;
   font-weight: 500;
 }
-<<<<<<< HEAD
 
-.search-cart {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  padding-left: 280px;
-=======
 .icons {
   display: flex;
   align-items: center;
@@ -64,9 +55,7 @@ header .logo {
 
 .icons img {
   height: 30px;
->>>>>>> fa47a27 (sept 5 update)
 }
->>>>>>> f3a915adb2374bc1ab25d2c0f0661fdd9da2521f
 
 /* Hero Section */
 .hero {
@@ -77,58 +66,20 @@ header .logo {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: white;
   padding: 0 20px;
 }
 
 .hero-text {
-<<<<<<< HEAD
-  display: inline-block;
-  position: relative;
-  top: 50px;
-  right: 150px;
-=======
-<<<<<<< HEAD
   max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   text-align: center;
   padding: 40px;
->>>>>>> f3a915adb2374bc1ab25d2c0f0661fdd9da2521f
-}
-
-.hero h1 {
-  font-size: 3.7rem;
-  background-color: #D32F2F;
-  color: #FFFFFF;
-  display: inline-block;
-<<<<<<< HEAD
-  padding: 30px 15px;
-=======
-  text-align: justify;
-}
-
-.hero h2 {
-  font-size: 15px;
-  color: #f0f0f0;
-  margin-top: -20px;
-  margin-bottom: 0px auto;
-  background-color: red;
-  display: inline-block;
-  text-align: right;
-}
-
-=======
-  display: inline-block;
-  position: relative;
-  top: 50px;
-  right: 150px;
 }
 
 .hero h1 {
@@ -141,7 +92,6 @@ header .logo {
   margin: 0 auto;
   font-family: 'Roboto Slab', serif;
   font-weight: 200;
-  ;
 }
 
 .hero-heading h2 {
@@ -157,8 +107,6 @@ header .logo {
   font-weight: 200;
 }
 
-
->>>>>>> fa47a27 (sept 5 update)
 /* Products Section */
 .products-grid {
   display: grid;
@@ -171,43 +119,25 @@ header .logo {
 .product-card {
   border: 1px solid #eee;
   padding: 15px;
->>>>>>> f3a915adb2374bc1ab25d2c0f0661fdd9da2521f
   text-align: center;
   margin: 0 auto;
   font-family: 'Roboto Slab', serif;
   font-weight: 200;
-  ;
 }
 
-.hero-heading h2 {
-  position: absolute;
-  bottom: -10px;
-  right: 0;                  
-  background-color: #D32F2F;
-  font-size: 1rem;
-  color: #FFFFFF;
-  padding: 15px 10px;
-  margin: 0;
-  font-family: 'Roboto Slab', serif;
-  font-weight: 200;
-}
-
-/* carousel portion */
-
+/* Carousel Section */
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Carousel viewport */
 .carousel-wrapper {
   overflow: hidden;
   width: 100%;
   position: relative;
 }
 
-/* Carousel items */
 .carousel {
   display: flex;
   transition: transform 0.5s ease;
@@ -241,5 +171,4 @@ header .logo {
   border-radius: 50%;
   margin-bottom: 10px;
 }
-
 
