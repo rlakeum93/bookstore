@@ -72,6 +72,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 .carousel-wrapper {
   overflow: hidden;
   width: 100%;
+  background: #fff;
 }
 
 .carousel {
@@ -82,7 +83,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 
 .product-card {
   flex: 0 0 20%; 
-  background: #f4f4f4;
+  background: transparent;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
@@ -91,7 +92,19 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 
 .product-card:hover { transform: translateY(-5px); }
 
-.product-card img { width: 100%; height: auto; border-radius: 5px; margin-bottom: 10px; }
+.product-card img {
+  width: 100%; 
+  height: auto; 
+  border-radius: 5px; 
+  margin-bottom: 10px;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-card img:hover {
+  transform: scale(1.03); /* small zoom on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* deeper shadow on hover */
+}
 .product-card h3 { font-size: 18px; margin: 5px 0; }
 .product-card .category,
 .product-card .price { font-size: 14px; color: #777; margin-top: 5px; }
@@ -114,14 +127,14 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 }
 
 .carousel-container:hover .carousel-btn {
-  background: rgba(0,0,0,0.2);
+  background: rgb(0, 0, 0);
   border: 2px solid rgba(0,0,0,0.3);
-  color: #fff;
+  color: #ffffff;
   opacity: 1;
 }
 
-.carousel-btn.left { left: 10px; }
-.carousel-btn.right { right: 10px; }
+.carousel-btn.left { left: -60px; }
+.carousel-btn.right { right: -60px; }
 
 .carousel-btn:hover {
   background: rgba(0,0,0,0.5);
