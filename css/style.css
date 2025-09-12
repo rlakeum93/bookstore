@@ -59,20 +59,19 @@
   padding-top: 30px;
 }
 
-h1 { font-size: 36px; margin-bottom: 5px; font-weight: 300;}
+h1 { font-size: 36px; margin-bottom: 5px; font-weight: 300; padding-top: 30px;}
 h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 
+/* Carousel */
 .carousel-container {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-/* Carousel Scroll */
 .carousel-wrapper {
-  overflow: hidden;
+  overflow: hidden; /* hide scrollbar */
   width: 100%;
-  background: #fff;
 }
 
 .carousel {
@@ -82,32 +81,19 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 }
 
 .product-card {
-  flex: 0 0 20%; 
-  background: transparent;
+  flex: 0 0 150px; /* will be overridden by JS for 5 visible */
+  background: #fff;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
-  transition: transform 0.3s;
+  box-sizing: border-box;
 }
-
-.product-card:hover { transform: translateY(-5px); }
 
 .product-card img {
-  width: 100%; 
-  height: auto; 
-  border-radius: 5px; 
-  margin-bottom: 10px;
-  display: block;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
-.product-card img:hover {
-  transform: scale(1.03); /* small zoom on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* deeper shadow on hover */
-}
-.product-card h3 { font-size: 18px; margin: 5px 0; }
-.product-card .category,
-.product-card .price { font-size: 14px; color: #777; margin-top: 5px; }
 
 /* Arrow Buttons */
 .carousel-btn {
@@ -122,7 +108,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   cursor: pointer;
   z-index: 2;
   border-radius: 50%;
-  opacity: 0; 
+  opacity: 0;
   transition: all 0.3s ease;
 }
 
@@ -173,7 +159,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 .author-profile {
   display: flex;
   gap: 20px;
-  background: #f9f9f9;
+  background: #FFFFFF;
   border-radius: 10px;   
   margin-left: auto;    
   margin-right: auto;
@@ -205,6 +191,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   display: flex;
   flex-direction: column;
   gap: 15px;
+  background: #fff;
 }
 
 /* Author text */
@@ -226,6 +213,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  background: #fff;
 }
 
 .book-thumb {
@@ -258,44 +246,201 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   }
 }
 /* Bottom: Featured Books */
-.featured-books {
+.featured-books .book-thumb {
+  flex: 0 0 160px; /* was 150px, now slightly bigger */
   display: flex;
-  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  padding: 10px;
+}
+
+/* Carousel Product Cards */
+.carousel .product-card {
+  flex: 0 0 150px; /* was smaller, now bigger */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carousel .product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0px 0px rgba(0,0,0,0.2);
+}
+
+/* Features Section */
+.features {
+  background: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* General feature box */
+/* Features Section */
+.features {
+  background: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ---------- Free Shipping Box ---------- */
+.feature-box.full-width.shipping-box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  overflow: hidden;
+  position: relative;         /* for CTA positioning */
+  text-align: left;           /* align text to left */
+  height: 250px;              /* bigger height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px;
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-box.full-width.shipping-box .feature-box-inner {
+  transition: transform 0.3s ease;
+}
+
+.feature-box.full-width.shipping-box h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-family: 'Glegoo', serif;
+  font-weight: 400;
+
+}
+
+.feature-box.full-width.shipping-box p {
+  font-size: 18px;
+  font-family: 'Glegoo', serif;
+}
+
+/* CTA Box inside Free Shipping */
+.cta-box {
+  background: #000;          
+  color: #fff;               
+  padding: 12px 30px;        
+  font-size: 18px;           
+  font-weight: bold;
+  border-radius: 8px;
+  position: absolute;        
+  right: 60px;               /* slightly left from right edge */
+  top: 50%;                  
+  transform: translateY(-50%);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-box:hover {
+  background: #222;          
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* ---------- Bottom Three Feature Boxes ---------- */
+.bottom-features {
+  display: flex;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
-.book-thumb {
-  background: #e0e0e0;
-  padding: 15px 20px;
-  border-radius: 5px;
-  font-size: 14px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s;
+.bottom-features .feature-box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  overflow: hidden;
+  flex: 1;
+  min-width: 250px;
+  height: 280px;               /* increased height */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;      /* align text & image left */
+  justify-content: center;
+  padding-left: 20px;
+  transition: box-shadow 0.3s ease;
 }
 
-.book-thumb:hover {
-  transform: translateY(-3px);
-  background: #d1d1d1;
+.bottom-features .feature-box-inner {
+  transition: transform 0.3s ease;
 }
 
-
-/* Testimonials Section */
-.testimonials {
-  background: #f9f9f9;
-  padding: 60px 20px;
-  text-align: center;
+.bottom-features .feature-box:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
-.testimonial {
-  margin-bottom: 30px;
-  font-style: italic;
+.bottom-features .feature-box:hover .feature-box-inner {
+  transform: scale(1.2);
 }
 
-.testimonial img {
-  width: 60px;
+/* Images inside bottom boxes */
+.bottom-features .feature-box img {
+  width: 60px;       /* zoomed-out image */
   height: 60px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  object-fit: contain;
 }
 
+/* Text inside bottom boxes */
+.bottom-features .feature-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-family: 'Glegoo', serif;
+}
+
+.bottom-features .feature-box p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bottom-features {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bottom-features .feature-box {
+    min-width: 100%;
+    height: auto;
+    padding-left: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .feature-box.full-width.shipping-box {
+    padding-left: 20px;
+    text-align: center;
+  }
+
+  .cta-box {
+    right: 20px;
+    top: auto;
+    bottom: 20px;
+    transform: none;
+  }
+}

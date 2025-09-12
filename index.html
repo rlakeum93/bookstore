@@ -1,121 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aurum Bookshop Clone</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css" />
-    
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="container">
-        <img src="img/logobookstore.png" alt="Bookstore Logo" class="logo">
-        <nav class="nav-bar">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Library</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">Buy Now</a></li>
-          </ul>
-        </nav>
-        <div class="icons">
-          <img src="img/search.png" alt="search" class="search">
-          <img src="img/bag.png" alt="bag" class="cart">
-        </div>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurum Bookshop Clone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
 
-    <!-- Hero Section -->
-    <section class="hero">
-     <div class="hero-heading">
-     <h1>"The world is quiet here"</h1>
-     <h2>- Lemony Snicket</h2>
-     </div>
-    </section>
+<!-- Header -->
+<header>
+  <div class="container">
+    <img src="img/logobookstore.png" alt="Bookstore Logo" class="logo">
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Books</a></li>
+        <li><a href="#">Library</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Buy Now</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <img src="img/search.png" alt="search" class="search">
+      <img src="img/bag.png" alt="bag" class="cart">
+    </div>
+  </div>
+</header>
 
-    <!-- Bestseller Carousel -->
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-heading">
+    <h1>"The world is quiet here"</h1>
+    <h2>- Lemony Snicket</h2>
+  </div>
+</section>
+
+<!-- Bestseller Carousel -->
 <div class="container">
   <h1>Bestsellers</h1>
   <h3>Top selling books of 2025</h3>
 
-  <div class="carousel-container">
+  <div class="carousel-container" id="top-carousel-container">
     <button class="carousel-btn left">&#10094;</button>
     <div class="carousel-wrapper">
-      <div class="carousel">
-        <!-- 12 Product Cards, all with same image -->
-        <div class="product-card">
-          <h3>Book Title 1</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 2</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 3</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 4</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 5</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 6</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 7</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 8</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 9</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 10</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 11</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
-        <div class="product-card">
-          <h3>Book Title 12</h3>
-          <p class="category">Category</p>
-          <p class="price">Price</p>
-        </div>
+      <div class="carousel" id="top-carousel">
+        <!-- Product cards will be dynamically injected -->
       </div>
     </div>
     <button class="carousel-btn right">&#10095;</button>
   </div>
 </div>
 
-    <!-- Author Section -->
+<!-- Author Section -->
 <section class="author">
   <h2>Author of the Month</h2>
   <h3>And his/her Bestsellers</h3>
@@ -130,114 +69,151 @@
         <p class="p1">Jules Winnefield</p>
         <p class="p2">Ezekiel 25:17</p>
         <p>--</p>
-        <p class="p3">"The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of the darkness. For he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy my brothers. And you will know I am the Lord when I lay my vengeance upon you."</p>
+        <p class="p3">"The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother’s keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy my brothers. And you will know I am the Lord when I lay my vengeance upon you"</p>
       </div>
 
-      <div class="featured-books">
-        <div class="book-thumb">Book 1</div>
-        <div class="book-thumb">Book 2</div>
-        <div class="book-thumb">Book 3</div>
-        <div class="book-thumb">Book 4</div>
+      <!-- Bottom Grid: 4 books -->
+      <div class="featured-books" id="author-books">
+        <!-- Books will be injected dynamically -->
       </div>
     </div>
   </div>
 </section>
+<section class="features">
+  <div class="features-container">
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-      <h2>What People Say</h2>
-      <div class="testimonial">
-        <img src="images/customer1.jpg" alt="Customer" />
-        <p>"Amazing collection of books!"</p>
-        <p class="author">— Customer A</p>
+    <!-- Free Shipping Box -->
+    <div class="feature-box full-width shipping-box">
+      <div class="feature-box-inner">
+        <h3>FREE SHIPPING</h3>
+        <p>FREE SHIPPING OVER $59 FOR INTERNATIONAL ORDERS</p>
+        <div class="cta-box">Get a book!</div>
       </div>
-      <div class="testimonial">
-        <img src="images/customer1.jpg" alt="Customer" />
-        <p>"Loved the website design!"</p>
-        <p class="author">— Customer B</p>
-      </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Aurum Bookshop Clone</p>
-    </footer>
-  <script>
-  const KAKAO_API_KEY = "5d87e57108b82e8fe70cd0dc8af67f9a";
+    <!-- Three Columns -->
+    <div class="feature-columns bottom-features">
 
-  function loadBooks(query = "베스트셀러") {
-    const url = `https://dapi.kakao.com/v3/search/book?target=title&query=${encodeURIComponent(query)}`;
+  <div class="feature-box" style="background-image: url('img/2.jpg');">
+    <div class="feature-box-inner">
+      <h3>Library</h3>
+      <p>READING SPACE</p>
+    </div>
+  </div>
 
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "Authorization": `KakaoAK ${KAKAO_API_KEY}`
-      }
+  <div class="feature-box" style="background-image: url('img/3.jpg');">
+    <div class="feature-box-inner">
+      <h3>Furnishing</h3>
+      <p>HOME FURNISHMENT</p>
+    </div>
+  </div>
+
+  <div class="feature-box" style="background-image: url('img/4.jpeg');">
+    <div class="feature-box-inner">
+      <h3>E-Books</h3>
+      <p>YOUR READING TOOL</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Aurum Bookshop Clone</p>
+</footer>
+
+<script>
+const KAKAO_API_KEY = "5d87e57108b82e8fe70cd0dc8af67f9a"; // replace with your key
+const VISIBLE_TOP = 5; // top carousel visible cards
+
+window.addEventListener("DOMContentLoaded", () => {
+  // --- Top carousel setup ---
+  const carouselWrapper = document.querySelector("#top-carousel-container .carousel-wrapper");
+  const carousel = document.getElementById("top-carousel");
+  const leftBtn = document.querySelector("#top-carousel-container .carousel-btn.left");
+  const rightBtn = document.querySelector("#top-carousel-container .carousel-btn.right");
+
+  function setTopCarouselWidths() {
+    const gap = 20; // same as CSS gap
+    const totalGap = gap * (VISIBLE_TOP - 1);
+    const cardWidth = Math.floor((carouselWrapper.clientWidth - totalGap) / VISIBLE_TOP);
+    carousel.querySelectorAll(".product-card").forEach(card => {
+      card.style.flex = `0 0 ${cardWidth}px`;
+      card.style.width = `${cardWidth}px`;
+    });
+  }
+
+  function loadTopCarousel(query = "소설", size = 12) {
+    fetch(`https://dapi.kakao.com/v3/search/book?target=title&query=${encodeURIComponent(query)}&size=${size}`, {
+      headers: { "Authorization": `KakaoAK ${KAKAO_API_KEY}` }
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
+    .then(res => res.ok ? res.json() : Promise.reject(res.statusText))
     .then(data => {
-      const carousel = document.querySelector(".carousel");
-      carousel.innerHTML = ""; // Clear existing product cards
-
+      carousel.innerHTML = "";
       data.documents.forEach(book => {
         const card = document.createElement("div");
-        card.classList.add("product-card");
-
+        card.className = "product-card";
         const thumbnail = book.thumbnail || "img/default-book.png";
-        const title = book.title || "No title";
         const authors = book.authors.length ? book.authors.join(", ") : "Unknown author";
         const price = book.price ? `${book.price}원` : "가격 정보 없음";
 
         card.innerHTML = `
-          <img src="${thumbnail}" alt="${title}">
-          <h3>${title}</h3>
+          <img src="${thumbnail}" alt="${book.title}">
+          <h3>${book.title}</h3>
           <p class="category">${authors}</p>
           <p class="price">${price}</p>
         `;
-
         carousel.appendChild(card);
       });
+      setTopCarouselWidths();
     })
-    .catch(error => {
-      console.error("Error fetching books from Kakao:", error);
-      const carousel = document.querySelector(".carousel");
-      carousel.innerHTML = `<p>책 정보를 불러올 수 없습니다.</p>`;
+    .catch(err => { console.error(err); carousel.innerHTML = "<p>책 정보를 불러올 수 없습니다.</p>"; });
+  }
+
+  leftBtn.addEventListener("click", () => {
+    carouselWrapper.scrollBy({ left: -carouselWrapper.clientWidth, behavior: "smooth" });
+  });
+  rightBtn.addEventListener("click", () => {
+    carouselWrapper.scrollBy({ left: carouselWrapper.clientWidth, behavior: "smooth" });
+  });
+
+  window.addEventListener("resize", () => setTopCarouselWidths());
+
+  loadTopCarousel();
+
+  // --- Bottom author books grid ---
+  function loadAuthorBooks(query = "철학", size = 4) {
+    const container = document.getElementById("author-books");
+    container.innerHTML = "";
+
+    fetch(`https://dapi.kakao.com/v3/search/book?target=title&query=${encodeURIComponent(query)}&size=${size}`, {
+      headers: { "Authorization": `KakaoAK ${KAKAO_API_KEY}` }
+    })
+    .then(res => res.ok ? res.json() : Promise.reject("Failed"))
+    .then(data => {
+      data.documents.forEach(book => {
+        const div = document.createElement("div");
+        div.className = "book-thumb";
+        div.innerHTML = `
+          <img src="${book.thumbnail || 'img/default-book.png'}" alt="${book.title}" 
+               style="width:100%; height:200px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
+          <p style="font-size:14px; font-weight:bold;">${book.title}</p>
+        `;
+        container.appendChild(div);
+      });
+    })
+    .catch(err => {
+      console.error(err);
+      container.innerHTML = "<p>책 정보를 불러올 수 없습니다.</p>";
     });
   }
 
-  window.addEventListener("DOMContentLoaded", () => {
-    loadBooks("소설"); // Default: show novels
-  });
+  loadAuthorBooks();
+});
 </script>
-
-<script>
-  // Carousel scroll
-  const carouselWrapper = document.querySelector(".carousel-wrapper");
-  const carousel = document.querySelector(".carousel");
-  const leftBtn = document.querySelector(".carousel-btn.left");
-  const rightBtn = document.querySelector(".carousel-btn.right");
-
-  // How far to scroll each click (px)
-  const scrollAmount = 300;
-
-  leftBtn.addEventListener("click", () => {
-    carouselWrapper.scrollBy({
-      left: -scrollAmount,
-      behavior: "smooth"
-    });
-  });
-
-  rightBtn.addEventListener("click", () => {
-    carouselWrapper.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth"
-    });
-  });
-</script>
-  </body>
+</body>
 </html>
