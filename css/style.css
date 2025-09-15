@@ -26,8 +26,8 @@
 }
 
 .hero-heading {
-  display: inline-block;        /* shrink-wrap to content */
-  background-color: #D32F2F;    /* red box around both h1 + h2 */
+  display: inline-block;
+  background-color: #D32F2F;
   color: #FFFFFF;
   padding: 20px 20px;
   font-family: 'Roboto Slab', serif;
@@ -70,7 +70,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 }
 
 .carousel-wrapper {
-  overflow: hidden; /* hide scrollbar */
+  overflow: hidden;
   width: 100%;
 }
 
@@ -81,7 +81,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 }
 
 .product-card {
-  flex: 0 0 150px; /* will be overridden by JS for 5 visible */
+  flex: 0 0 150px;
   background: #fff;
   border-radius: 10px;
   padding: 15px;
@@ -127,15 +127,14 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   border: 2px solid rgba(0,0,0,0.5);
 }
 
-/*Author section*/
-
+/* Author section */
 .author h2 {
-  font-size: 36px;   /* bigger heading */
-  font-weight: 300;  /* optional: make it a bit bolder */
+  font-size: 36px;
+  font-weight: 300;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px; /* aligns with image */
+  padding-left: 20px;
   font-family: 'Glegoo', serif;
   font-size: 36px;
   margin-bottom: 5px;
@@ -143,12 +142,12 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 }
 
 .author h3 {
-  font-size: 24px;   /* bigger subheading */
-  font-weight: 300;  /* optional: lighter than h2 */
+  font-size: 24px;
+  font-weight: 300;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px; /* aligns with image */
+  padding-left: 20px;
   font-family: 'Glegoo', serif;
   font-size: 20px;
   margin-bottom: 20px; 
@@ -168,24 +167,22 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   flex-wrap: wrap;
 }
 
-/* Left Column: fixed image size */
 .author-image-wrapper {
-  flex: none;           /* prevents stretching */
-  width: 400px;         /* fixed width */
-  height: 600px;        /* fixed height */
-  overflow: hidden;     /* clip anything outside */
+  flex: none;
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
   border-radius: 10px;
   margin-right: 20px;
 }
 
 .author-image-wrapper img {
-  width: 100%;          /* fills wrapper */
+  width: 100%;
   height: 100%;
-  object-fit: cover;    /* maintain aspect ratio */
+  object-fit: cover;
   display: block;
 }
 
-/* Right Column: text + books */
 .author-info {
   flex: 1;
   display: flex;
@@ -194,7 +191,6 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   background: #fff;
 }
 
-/* Author text */
 .p1 { 
   font-size: 28px;
   font-family: 'Glegoo', serif;
@@ -208,7 +204,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   padding-top: 30px;
   font-family: 'Glegoo', serif;
 }
-/* Featured books */
+
 .featured-books {
   display: flex;
   gap: 15px;
@@ -245,9 +241,10 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
     margin-right: 0;
   }
 }
+
 /* Bottom: Featured Books */
 .featured-books .book-thumb {
-  flex: 0 0 160px; /* was 150px, now slightly bigger */
+  flex: 0 0 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -259,7 +256,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
 
 /* Carousel Product Cards */
 .carousel .product-card {
-  flex: 0 0 150px; /* was smaller, now bigger */
+  flex: 0 0 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,30 +287,15 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   gap: 40px;
 }
 
-/* General feature box */
-/* Features Section */
-.features {
-  background: #f9f9f9;
-  padding: 60px 20px;
-}
-
-.features-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-/* ---------- Free Shipping Box ---------- */
+/* Free Shipping Box */
 .feature-box.full-width.shipping-box {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   overflow: hidden;
-  position: relative;         /* for CTA positioning */
-  text-align: left;           /* align text to left */
-  height: 250px;              /* bigger height */
+  position: relative;
+  text-align: left;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -330,7 +312,6 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   margin-bottom: 10px;
   font-family: 'Glegoo', serif;
   font-weight: 400;
-
 }
 
 .feature-box.full-width.shipping-box p {
@@ -338,7 +319,6 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   font-family: 'Glegoo', serif;
 }
 
-/* CTA Box inside Free Shipping */
 .cta-box {
   background: #000;          
   color: #fff;               
@@ -347,7 +327,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   font-weight: bold;
   border-radius: 8px;
   position: absolute;        
-  right: 60px;               /* slightly left from right edge */
+  right: 60px;               
   top: 50%;                  
   transform: translateY(-50%);
   cursor: pointer;
@@ -360,7 +340,7 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   transform: translateY(-50%) scale(1.05);
 }
 
-/* ---------- Bottom Three Feature Boxes ---------- */
+/* Bottom Three Feature Boxes */
 .bottom-features {
   display: flex;
   gap: 30px;
@@ -374,13 +354,14 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   overflow: hidden;
   flex: 1;
   min-width: 250px;
-  height: 280px;               /* increased height */
+  height: 280px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;      /* align text & image left */
+  align-items: flex-start;
   justify-content: center;
   padding-left: 20px;
   transition: box-shadow 0.3s ease;
+  position: relative;
 }
 
 .bottom-features .feature-box-inner {
@@ -395,12 +376,29 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   transform: scale(1.2);
 }
 
-/* Images inside bottom boxes */
+/* Images inside bottom boxes with dim overlay */
 .bottom-features .feature-box img {
-  width: 60px;       /* zoomed-out image */
-  height: 60px;
-  margin-bottom: 25px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.bottom-features .feature-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.bottom-features .feature-box:hover::after {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Text inside bottom boxes */
@@ -408,12 +406,19 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
   font-size: 22px;
   margin-bottom: 15px;
   font-family: 'Glegoo', serif;
+  color: #fff;
+  text-align: center;
+  position: relative; /* above overlay */
+  z-index: 2;
 }
 
 .bottom-features .feature-box p {
   font-size: 18px;
-  color: #555;
   line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 /* Responsive */
@@ -430,6 +435,8 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
     padding-left: 20px;
     text-align: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
   }
 
   .feature-box.full-width.shipping-box {
@@ -442,5 +449,77 @@ h3 { font-size: 20px; margin-bottom: 20px; font-weight: 300; color: #555; }
     top: auto;
     bottom: 20px;
     transform: none;
+  }
+}
+
+/* ---------- Bottom Menu ---------- */
+.bottom-menu {
+  background: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+  padding: 60px 20px;
+  font-family: 'Glegoo', serif;
+}
+
+.bottom-menu-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* six equal columns */
+  gap: 40px;
+}
+
+.bottom-menu .menu-section h3 {
+  font-size: 22px;
+  font-weight: 200;
+  margin-bottom: 20px;
+  color: #222;
+  font-family: 'tahoma', Arial, sans-serif;
+}
+
+.bottom-menu .menu-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-menu .menu-section ul li {
+  margin-bottom: 10px;
+}
+
+.bottom-menu .menu-section ul li a {
+  color: #555;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  font-family: 'Glegoo', serif;
+}
+
+.bottom-menu .menu-section ul li a:hover {
+  color: #d32f2f; /* theme red */
+}
+
+/* Social icons inline with text */
+.bottom-menu .social-links li a i {
+  margin-right: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 992px) {
+  .bottom-menu-inner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bottom-menu-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .bottom-menu .menu-section h3 {
+    margin-bottom: 10px;
   }
 }
