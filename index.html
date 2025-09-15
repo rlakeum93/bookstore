@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aurum Bookshop Clone</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/common.css">
 </head>
@@ -202,8 +203,33 @@
 </footer>
 
 <script>
-const KAKAO_API_KEY = "5d87e57108b82e8fe70cd0dc8af67f9a"; // replace with your key
-const VISIBLE_TOP = 5; // top carousel visible cards
+const KAKAO_API_KEY = "5d87e57108b82e8fe70cd0dc8af67f9a"; 
+const VISIBLE_TOP = 5; 
+const KRW_TO_USD = 1400; // 1 USD ≈ 1400 KRW, adjust as needed
+
+// Top carousel bestseller list (replace with your preferred titles)
+const topBestsellerTitles = [
+  "The Midnight Library",
+  "Atomic Habits",
+  "Project Hail Mary",
+  "The Seven Husbands of Evelyn Hugo",
+  "Where the Crawdads Sing",
+  "Educated",
+  "Normal People",
+  "The Invisible Life of Addie LaRue",
+  "The Song of Achilles",
+  "Little Fires Everywhere",
+  "Sapiens",
+  "Becoming"
+];
+
+// Bottom author books grid list (replace as needed)
+const authorBooksTitles = [
+  "Meditations",
+  "The Republic",
+  "Nicomachean Ethics",
+  "Beyond Good and Evil"
+];
 
 window.addEventListener("DOMContentLoaded", () => {
   // --- Top carousel setup ---
@@ -213,7 +239,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const rightBtn = document.querySelector("#top-carousel-container .carousel-btn.right");
 
   function setTopCarouselWidths() {
-    const gap = 20; // same as CSS gap
+    const gap = 20;
     const totalGap = gap * (VISIBLE_TOP - 1);
     const cardWidth = Math.floor((carouselWrapper.clientWidth - totalGap) / VISIBLE_TOP);
     carousel.querySelectorAll(".product-card").forEach(card => {
@@ -222,31 +248,34 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function loadTopCarousel(query = "소설", size = 12) {
-    fetch(`https://dapi.kakao.com/v3/search/book?target=title&query=${encodeURIComponent(query)}&size=${size}`, {
-      headers: { "Authorization": `KakaoAK ${KAKAO_API_KEY}` }
-    })
-    .then(res => res.ok ? res.json() : Promise.reject(res.statusText))
-    .then(data => {
-      carousel.innerHTML = "";
-      data.documents.forEach(book => {
-        const card = document.createElement("div");
-        card.className = "product-card";
-        const thumbnail = book.thumbnail || "img/default-book.png";
-        const authors = book.authors.length ? book.authors.join(", ") : "Unknown author";
-        const price = book.price ? `${book.price}원` : "가격 정보 없음";
+  function loadTopCarouselFromList(titles) {
+    carousel.innerHTML = "";
+    titles.forEach(title => {
+      fetch(`https://dapi.kakao.com/v3/search/book?target=title&query=${encodeURIComponent(title)}&size=1`, {
+        headers: { "Authorization": `KakaoAK ${KAKAO_API_KEY}` }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.documents.length > 0) {
+          const book = data.documents[0];
+          const card = document.createElement("div");
+          card.className = "product-card";
 
-        card.innerHTML = `
-          <img src="${thumbnail}" alt="${book.title}">
-          <h3>${book.title}</h3>
-          <p class="category">${authors}</p>
-          <p class="price">${price}</p>
-        `;
-        carousel.appendChild(card);
-      });
-      setTopCarouselWidths();
-    })
-    .catch(err => { console.error(err); carousel.innerHTML = "<p>책 정보를 불러올 수 없습니다.</p>"; });
+          const priceUSD = book.price ? `$${(book.price / KRW_TO_USD).toFixed(2)}` : "Price N/A";
+          const authors = book.authors.length ? book.authors.join(', ') : 'Unknown author';
+
+          card.innerHTML = `
+            <img src="${book.thumbnail || 'img/default-book.png'}" alt="${book.title}">
+            <h3>${book.title}</h3>
+            <p class="category">${authors}</p>
+            <p class="price">${priceUSD}</p>
+          `;
+          carousel.appendChild(card);
+          setTopCarouselWidths();
+        }
+      })
+      .catch(err => console.error(err));
+    });
   }
 
   leftBtn.addEventListener("click", () => {
@@ -258,37 +287,45 @@ window.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", () => setTopCarouselWidths());
 
-  loadTopCarousel();
+  loadTopCarouselFromList(topBestsellerTitles);
 
   // --- Bottom author books grid ---
-  function loadAuthorBooks(query = "철학", size = 4) {
-    const container = document.getElementById("author-books");
-    container.innerHTML = "";
+  const authorContainer = document.getElementById("author-books");
 
-    fetch(`https://dapi.kakao.com/v3/search/book?target=title&query=${encodeURIComponent(query)}&size=${size}`, {
-      headers: { "Authorization": `KakaoAK ${KAKAO_API_KEY}` }
-    })
-    .then(res => res.ok ? res.json() : Promise.reject("Failed"))
-    .then(data => {
-      data.documents.forEach(book => {
-        const div = document.createElement("div");
-        div.className = "book-thumb";
-        div.innerHTML = `
-          <img src="${book.thumbnail || 'img/default-book.png'}" alt="${book.title}" 
-               style="width:100%; height:200px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
-          <p style="font-size:14px; font-weight:bold;">${book.title}</p>
-        `;
-        container.appendChild(div);
-      });
-    })
-    .catch(err => {
-      console.error(err);
-      container.innerHTML = "<p>책 정보를 불러올 수 없습니다.</p>";
+  function loadAuthorBooksFromList(titles) {
+    authorContainer.innerHTML = "";
+    titles.forEach(title => {
+      fetch(`https://dapi.kakao.com/v3/search/book?target=title&query=${encodeURIComponent(title)}&size=1`, {
+        headers: { "Authorization": `KakaoAK ${KAKAO_API_KEY}` }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.documents.length > 0) {
+          const book = data.documents[0];
+          const div = document.createElement("div");
+          div.className = "book-thumb";
+
+          const priceUSD = book.price ? `$${(book.price / KRW_TO_USD).toFixed(2)}` : "Price N/A";
+          const authors = book.authors.length ? book.authors.join(', ') : 'Unknown author';
+
+          div.innerHTML = `
+            <img src="${book.thumbnail || 'img/default-book.png'}" alt="${book.title}" 
+                 style="width:100%; height:200px; object-fit:cover; border-radius:4px; margin-bottom:10px;">
+            <p style="font-size:14px; font-weight:bold;">${book.title}</p>
+            <p style="font-size:12px; color:#555;">${authors}</p>
+            <p style="font-size:12px; color:#555;">${priceUSD}</p>
+          `;
+          authorContainer.appendChild(div);
+        }
+      })
+      .catch(err => console.error(err));
     });
   }
 
-  loadAuthorBooks();
+  loadAuthorBooksFromList(authorBooksTitles);
 });
 </script>
+
+
 </body>
 </html>
