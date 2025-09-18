@@ -94,3 +94,86 @@
 .dot.active {
   background-color: #333;
 }
+
+/* Container for library text to match image width */
+.library-text {
+  max-width: 1300px; /* match your image container width */
+  margin: 0 auto;   /* centers the text block horizontally */
+  padding: 0 15px;  /* small padding inside to prevent touching edges */
+  padding-top: 45px;
+}
+
+/* Paragraph styling inside library-text */
+.library-text p {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  color: #333;
+  text-align: justify;
+  text-justify: inter-word;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.library-text p:last-of-type {
+  margin-bottom: 40px;
+}
+
+/* Meet the Writers Section */
+.meet-the-writers {
+  padding: 60px 20px;
+  background-color: #fff; /* light background */
+  text-align: center;
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+/* Section Heading */
+.meet-the-writers h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* Optional subtitle/intro */
+.meet-the-writers p {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* Writers Grid */
+.writers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Writer Card */
+.writer-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.writer-card img {
+  width: 260px;       /* fixed width */
+  height: 260px;      /* fixed height */
+  border-radius: 50%; /* makes it a circle */
+  object-fit: cover;  /* crops image to fill circle without distortion */
+  margin: 0 auto 15px auto; /* centers image */
+  display: block;
+}
+
+/* Writer Name */
+.writer-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.writer-card p {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
